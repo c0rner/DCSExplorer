@@ -6,6 +6,7 @@
 //
 #pragma once
 #include <memory>
+#include <unordered_map>
 #include "DCSDecoder.h"
 
 class DCSDecoderNative : public DCSDecoder
@@ -753,6 +754,7 @@ protected:
         DecoderImpl(DCSDecoderNative *decoder) : decoder(decoder) { }
         DCSDecoderNative *decoder;
 
+        virtual ~DecoderImpl() = default;
         // Decompress a frame
         virtual void DecompressFrame(Channel &channel, uint16_t *frameBuffer) = 0;
 

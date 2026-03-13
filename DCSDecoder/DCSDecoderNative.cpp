@@ -3497,7 +3497,7 @@ uint32_t DCSDecoderNative::BitShiftSigned32(int32_t val, int by)
     if (by < 32)
         return (val >> by) | (~0UL << (32 - by));
     else
-        return ~0UL;
+        return ~0U;
 }
 
 uint16_t DCSDecoderNative::RoundMultiplyResult(uint64_t &mr, int32_t prod)
